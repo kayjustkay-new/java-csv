@@ -1,13 +1,18 @@
-<h1>Lorem the Ipsum</h1>
 <script>
+
+// Placeholder for Matrix
+// TODO Generate Matrix
+
 var schedule = [
-   ['Period 1', 'Math'],
+   ['Period 1', 'Math','M1'],
    ['Period 2', 'English'],
    ['Period 3', 'Chemistry']
 ];
  
+// TODO Generate ICL
+// TODO Remove Blank events?
  
-function download_csv() {
+function download_schedule() {
     var csv = 'Name,Title\n';
     schedule.forEach(function(row) {
             csv += row.join(',');
@@ -18,9 +23,9 @@ function download_csv() {
     var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
     hiddenElement.target = '_blank';
-    hiddenElement.download = 'people.csv';
+    hiddenElement.download = 'CSH Schedule.csv';
     hiddenElement.click();
 }
 </script>
  
-<button onclick="download_csv()">Download CSV</button> 
+<button onclick="download_schedule()">Download CSV</button> 
