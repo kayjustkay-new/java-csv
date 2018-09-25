@@ -1,1 +1,26 @@
 <h1>Lorem the Ipsum</h1>
+<script>
+var schedule = [
+   ['Period 1', 'Math'],
+   ['Period 2', 'English'],
+   ['Period 3', 'Chemistry']
+];
+ 
+ 
+function download_csv() {
+    var csv = 'Name,Title\n';
+    schedule.forEach(function(row) {
+            csv += row.join(',');
+            csv += "\n";
+    });
+ 
+    console.log(csv);
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'people.csv';
+    hiddenElement.click();
+}
+</script>
+ 
+<button onclick="download_csv()">Download CSV</button> 
